@@ -887,7 +887,9 @@ let candlesBlown = 0;
 // Audio control
 audioControl.addEventListener('click', function() {
     if (backgroundMusic.paused) {
-        backgroundMusic.play();
+        backgroundMusic.play().catch(err => {
+            console.log("Autoplay blocked by browser policy:", err);
+        });
         audioIcon.classList.remove('fa-volume-mute');
         audioIcon.classList.add('fa-volume-up');
     } else {
@@ -902,7 +904,9 @@ candles.forEach(candle => {
     candle.addEventListener('click', function() {
         if (!this.classList.contains('blown')) {
             blowSound.currentTime = 0;
-            blowSound.play();
+            blowSound.play().catch(err => {
+                console.log("Audio play blocked:", err);
+            });
             
             this.classList.add('blown');
             candlesBlown++;

@@ -204,6 +204,12 @@
       opacity: 0;
       transform: translateY(20px);
     }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px) rotate(10deg); }
+      70% { transform: translateY(-10px) rotate(-5deg); }
+      100% { opacity: 1; transform: translateY(0) rotate(0); }
+    }
   </style>
 </head>
 <body class="flex items-center justify-center h-screen w-screen">
@@ -508,15 +514,6 @@
         window.location.href = '2.HTML';
       }, 1200);
     });
-    
-    // Custom animations
-    document.styleSheets[0].insertRule(`
-      @keyframes fadeInUp {
-        0% { opacity: 0; transform: translateY(30px) rotate(10deg); }
-        70% { transform: translateY(-10px) rotate(-5deg); }
-        100% { opacity: 1; transform: translateY(0) rotate(0); }
-      }
-    `, document.styleSheets[0].cssRules.length);
     
     // Create periodic bursts of fireworks and hearts
     function createCelebrationBurst() {
