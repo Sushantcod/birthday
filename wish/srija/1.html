@@ -40,18 +40,10 @@
 
     .birthday-text {
       font-family: 'Dancing Script', cursive;
-      background: linear-gradient(90deg, #ff6b6b, #ffb347, #9b59b6, #3498db, #2ecc71);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rainbow 8s linear infinite;
-      text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    }
-
-    @keyframes rainbow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      color: #ff3ca6;
+      text-shadow: 0 0 10px rgba(255, 60, 166, 0.8), 
+                   0 0 20px rgba(255, 60, 166, 0.5), 
+                   0 0 30px rgba(255, 255, 255, 0.6);
     }
 
     .birthday-text span {
@@ -511,7 +503,7 @@
       
       // Redirect after short delay
       setTimeout(() => {
-        window.location.href = '2.HTML';
+        window.location.href = '2.html';
       }, 1200);
     });
     
