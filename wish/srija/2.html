@@ -361,42 +361,77 @@
         /* Birthday message */
         .birthday-message {
             font-family: 'Dancing Script', cursive;
-            font-size: 3rem;
-            color: #fff; /* Changed base color for better visibility */
+            font-size: 2.2rem;
+            color: #fff;
             text-align: center;
             margin-top: 40px;
             opacity: 0;
-            transition: opacity 2s, transform 2s;
-           
+            transition: opacity 1.5s, transform 1.5s;
             transform: translateY(20px);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
+            gap: 20px;
+            
+            /* Glassmorphism styling */
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 24px;
+            padding: 30px 25px;
+            max-width: 500px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 8px 32px 0 rgba(122, 54, 255, 0.15);
+            z-index: 10;
         }
         
         .birthday-message.visible {
             opacity: 1;
             transform: translateY(0);
-            animation: glow 2s ease-in-out infinite alternate;
+            animation: glow 2.5s ease-in-out infinite alternate;
         }
         
-
-            .message-text {
-                /* Updated gradient for new colors */
-                background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
-                background-size: 300% 300%;
-                animation: gradient-text 6s ease infinite;
-                -webkit-background-clip: text;
-                background-clip: text;
-                color: transparent;
-                margin-bottom: 20px;
-                font-weight: bold;
-                line-height: 1.4;
-                padding: 0 20px;
-                 /* Updated stroke color */
-            }
+        .message-text {
+            background: linear-gradient(45deg, #ffffff, #ffd700, #ffb3ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.2rem;
+            font-weight: bold;
+            line-height: 1.5;
+            padding: 0 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
         
+        .candle-instruction {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            z-index: 10;
+            animation: float 6s ease-in-out infinite;
+            padding: 0 15px;
+        }
+        
+        .candle-instruction p {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #7a36ff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.8);
+            font-weight: bold;
+            line-height: 1.3;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 8px 32px 0 rgba(122, 54, 255, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            }
+            to {
+                box-shadow: 0 8px 32px 12px rgba(255, 60, 166, 0.35), 0 0 0 2px rgba(255, 255, 255, 0.2);
+            }
+        }
         
         @keyframes gradient-text {
             0% { background-position: 0% 50%; }
@@ -407,6 +442,26 @@
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
+        }
+
+        @media (max-width: 768px) {
+            .candle-instruction {
+                margin-top: 40px;
+                margin-bottom: 10px;
+            }
+            .candle-instruction p {
+                font-size: 1.35rem;
+            }
+            .birthday-message {
+                font-size: 1.5rem;
+                padding: 20px 15px;
+                gap: 15px;
+                margin-top: 25px;
+            }
+            .message-text {
+                font-size: 1.5rem;
+                line-height: 1.4;
+            }
         }
         
        
@@ -729,10 +784,8 @@
     <div class="ribbon" style="bottom: 10%; right: 10%;"></div>
     
     <!-- Instruction to blow candles -->
-    <div class="candle-instruction" style="text-align: center; margin-top: 60px; margin-bottom: -40px; z-index: 10; animation: float 6s ease-in-out infinite;">
-        <p style="font-family: 'Dancing Script', cursive; font-size: 2rem; color: #7a36ff; text-shadow: 0 0 10px rgba(255,255,255,0.8); font-weight: bold; padding: 0 15px;">
-            ✨ Close your eyes, make a wish, and click each candle to blow it out! ✨
-        </p>
+    <div class="candle-instruction">
+        <p>✨ Close your eyes, make a wish, and click each candle to blow it out! ✨</p>
     </div>
 
     <!-- Cake container -->
