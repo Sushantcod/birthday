@@ -1,8 +1,8 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/geezee mam wish/New folder/1.html" },
-    { "source": "/index.html", "destination": "/geezee mam wish/New folder/1.html" },
-    { "source": "/:path*", "destination": "/geezee mam wish/New folder/:path*" }
+    { "source": "/", "destination": "/wish/srija/1.html" },
+    { "source": "/index.html", "destination": "/wish/srija/1.html" },
+    { "source": "/:path*", "destination": "/wish/srija/:path*" }
   ]
 }
