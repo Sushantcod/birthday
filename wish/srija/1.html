@@ -270,12 +270,12 @@
       subtitle.style.transition = 'all 1s ease';
       subtitle.style.opacity = '1';
       subtitle.style.transform = 'translateY(0)';
-    }, 200 * characters.length);
+    }, 50 * characters.length);
     
     // Show next button after text animation completes
     setTimeout(() => {
       document.getElementById('nextButton').classList.add('visible');
-    }, 200 * characters.length + 800);
+    }, 50 * characters.length + 400);
     
     // Create hearts with more variation
     function createHeart() {
