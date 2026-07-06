@@ -3,6 +3,7 @@
   "rewrites": [
     { "source": "/", "destination": "/wish/srija/1.html" },
     { "source": "/index.html", "destination": "/wish/srija/1.html" },
+    { "source": "/2.HTML", "destination": "/wish/srija/2.html" },
     { "source": "/:path*", "destination": "/wish/srija/:path*" }
   ]
 }
